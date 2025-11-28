@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.qaiser.hyra.tasbeeh_counter2.MainActivity">
+    <item
+        android:id="@+id/action_history"
+        android:title="@string/action_settings"
+        android:visible="true"
+        app:showAsAction="always"
+        android:icon="@drawable/history1"
+        />
+    <item
+        android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        android:visible="true"
+        app:showAsAction="always"
+        android:icon="@drawable/reset1"
+        />
+
+</menu>
