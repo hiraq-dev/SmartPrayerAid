@@ -1,37 +1,39 @@
 # 📱 SmartPrayerAid – Islamic Utility Suite
 
-*A Unified Android Application for Parental Monitoring, Islamic Calendar, and Tasbeeh Tracking*
+*A Unified Android Application for Namaz Assistance, Islamic Calendar, and Tasbeeh Counter*
 
 ---
 
 ## 🌟 Overview
 
-SmartPrayerAid is a multi-module Android application designed to support digital wellbeing, spiritual growth, and daily Islamic practices. It integrates **Parental Monitoring**, an **Islamic Calendar**, and a **Tasbeeh Counter** into one intelligent, secure, and user-friendly app.
+SmartPrayerAid is a multi-module Android application designed to support digital wellbeing, spiritual growth, and daily Islamic practices. It integrates a **Namaz Assistance App**, an **Islamic Calendar**, and a **Tasbeeh Counter** into one intelligent, secure, and user-friendly app.
 
-This project showcases strong Android development skills using **Java**, **SQLite**, **API integrations**, **background services**, and **custom UI components**.
+This project showcases strong Android development skills using **Java**, **SQLite**, **API integrations**, **background services**, **speech recognition**, and **custom UI components**.
 
 ---
 
 # 📦 Modules Overview
 
-## 🕵️‍♂️ 1. Parental Eye – Monitoring & Alert System
+## 🕌 1. Namaz Application – Prayer Assistance & Accessibility
 
-**A parental control module that detects app usage and sends automated SMS alerts.**
+**A digital companion app for tracking daily prayers, guiding users through prayer routines, and assisting disabled persons using speech recognition.**
 
 ### Key Features
 
-* 🔐 Secure Authentication: Password creation, login system, automatic logout.
-* 📱 Real-time App Monitoring: Detects when a configured app is launched.
-* 💬 SMS Alerts: Sends customizable SMS notifications.
-* ⚙️ Background Monitoring: Works continuously using `AlarmManager` + Broadcast Receivers.
-* 📊 Activity Logs: Complete monitoring history.
+* 🔐 Secure Authentication (optional for user personalization)
+* 📱 Real-time Prayer Time Calculation based on location
+* 🎙️ **Voice-Guided Prayer Assistance** for Rakat, Sajda, and other prayer steps
+* ⚙️ Background Services for notifications and tasbeeh counting
+* 📊 Prayer History Tracking
+* ♿ Accessibility support for disabled users during prayers
 
 ### Technical Highlights
 
-* Background services (`CameraService`, `CameraService2`)
-* SQLite database (rules + logs + authentication)
-* App detection via background polling
-* Secure password management
+* Speech recognition algorithm to guide users through prayer steps
+* Background services for prayer reminders and tasbeeh tracking
+* SQLite database for prayer logs and user preferences
+* API integration for location-based prayer times (Aladhan API)
+* Custom UI components for dual-date calendars and tasbeeh tracking
 
 ---
 
@@ -84,7 +86,7 @@ This project showcases strong Android development skills using **Java**, **SQLit
 * JDK 8+
 * Minimum SDK: **API 16**
 * Active Internet for API calls
-* SMS permission (for parental module)
+* SMS permission (for tasbeeh or notification modules)
 
 ## Installation
 
@@ -119,20 +121,15 @@ Open in **Android Studio → Build → Run**
 * **SQLite** (local offline storage)
 * **REST APIs** (Geonames, Aladhan)
 * **Broadcast Receivers & Background Services**
+* **Speech Recognition Algorithm for Prayer Guidance**
 * **Custom UI components**
 
 ## Database Structure (SQLite)
 
-### Parental Eye Module
+### Namaz Module
 
 ```sql
-CREATE TABLE entry (ID INTEGER PRIMARY KEY, APP_NAME TEXT, NUMBER TEXT, MSG TEXT);
-CREATE TABLE register (ID INTEGER PRIMARY KEY, password TEXT);
-```
-
-### Tasbeeh Counter Module
-
-```sql
+-- Prayer logs and tasbeeh tracking
 CREATE TABLE MasterTable (ID INTEGER PRIMARY KEY, ZIKAR_NAME TEXT, SETCOUNTER NUMBER, ...);
 CREATE TABLE MYCUSTZIKAR (ID INTEGER PRIMARY KEY, NAMECUST TEXT);
 ```
@@ -141,13 +138,12 @@ CREATE TABLE MYCUSTZIKAR (ID INTEGER PRIMARY KEY, NAMECUST TEXT);
 
 # 📖 Usage Guide
 
-## Module 1 – Parental Eye
+## Module 1 – Namaz Application
 
-1. Set password on first launch
-2. Add app to monitor
-3. Enter parent contact number
-4. Customize alert message
-5. Monitor activity logs
+1. Enable location for accurate prayer times
+2. Follow voice-guided instructions for Rakat, Sajda, and other prayer steps
+3. Track prayer completion and progress
+4. Access history logs
 
 ## Module 2 – Islamic Calendar
 
@@ -171,7 +167,7 @@ CREATE TABLE MYCUSTZIKAR (ID INTEGER PRIMARY KEY, NAMECUST TEXT);
 * Arabic RTL support
 * Dynamic tables and history logs
 * Dual calendar templates
-* Accessible color schemes
+* Accessibility for visually impaired or disabled users
 
 ---
 
@@ -209,7 +205,7 @@ Submit a Pull Request ✔️
 
 *(Add images here in your repo)*
 
-* Parental Eye Dashboard
+* Namaz Application Dashboard
 * Islamic Calendar
 * Tasbeeh Counter
 * Settings Screens
@@ -218,13 +214,13 @@ Submit a Pull Request ✔️
 
 # 🚨 Troubleshooting
 
-### Prayer Times Not Updating
+### Prayer Guidance Not Working
 
-* Enable GPS
-* Check connectivity
-* Verify API responses
+* Enable microphone permissions
+* Ensure speech recognition is supported on device
+* Check connectivity for API-based prayer times
 
-### SMS Not Sending
+### Tasbeeh or Notifications Not Working
 
 * Grant SMS permissions
 * Validate phone number
@@ -257,7 +253,7 @@ This project is licensed under the **MIT License**.
 
 **Maintainer:** Hira Qaiser
 GitHub: [https://github.com/hiraq-dev](https://github.com/hiraq-dev)
-Email: [Your Email]
+Email: [hira.qaiser.study@gmail.com]
 
 <div align="center">
 ### 🌟 *May this application bring ease and barakah to its users.*  
